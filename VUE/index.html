@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>score:<input type="text" _v-model="score" /></div>
+      <p _v-bind="score"></p>
+      <button _v-click="modifyScore">随机分配分数(0-100)</button>
+    </div>
+  </body>
+</html>
+<script>
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+  // _VUE
+  function _VUE(options) {
+    this.init(options);
+  }
+  _VUE.prototype.init = function(options) {
+    this.$options = options;
+    this.$el = document.querySelector(options.el);
+    this.$data = options.data;
+    this.$methods = options.methods;
+
+    this._binding = {};
+
+    this.obverse(this.$data);
+  };
+  _VUE.prototype.obverse = function(obj) {
+    for (key in obj) {
+      var value;
+      if (obj.hasOwnProperty(key)) {
+        value = obj[key];
+      }
+      if (typeof value === 'object') this.obverse(value);
+      Object.defineProperty(this.$data, key, {
+        get: function() {
+          console.log('get');
+          return value;
+        },
+        set(newValue) {
+          console.log('set');
+          if (value !== newValue) value = newValue;
+        }
+      });
+    }
+  };
+
+  // Watcher
+  function _Watcher(name, el, vm, expOrFn, attr) {
+    this.name = name;
+    this.el = el;
+    this.vm = vm;
+    this.expOrFn = expOrFn;
+    this.attr = attr;
+
+    this.update();
+  }
+  _Watcher.prototype.update = function() {
+    this.el[this.attr] = this.vm.$data[this.expOrFn];
+  };
+</script>
+<script>
+  var app = new _VUE({
+    el: '#app',
+    data: {
+      score: 78
+    },
+    methods: {
+      modifyScore() {
+        this.score = getRandomInt(101);
+      }
+    }
+  });
+</script>
