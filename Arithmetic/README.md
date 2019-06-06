@@ -8,7 +8,7 @@ Copy the repo into your disk first
 $ git clone git@github.com:Wayley/front-end-notes.git
 ```
 
-Then get into the [arithmetic folder](https://github.com/Wayley/front-end-notes/tree/master/arithmetic)
+Then get into the [arithmetic folder](https://github.com/Wayley/front-end-notes/tree/master/Arithmetic)
 
 ```bash
 $ cd arithmetic/
