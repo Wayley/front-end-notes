@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cookie</title>
+  </head>
+  <body>
+    <div id="app">
+      <button onclick="setCookie()">创建cookie</button>
+      <button onclick="getCookies()">获取cookie</button>
+    </div>
+  </body>
+</html>
+<script>
+  function setCookie(name, value, hours, path) {
+    var name = escape(name);
+    var value = escape(value);
+    var expires = new Date();
+    expires.setTime(expires.getTime() + hours * 60 * 60 * 1000);
+    path = path == '' ? '' : ';path=' + path;
+    _expires =
+      typeof hours == 'string' ? '' : ';expires=' + expires.toUTCString(); //toUTCString or toGMTString
+    document.cookie = name + '=' + value + _expires + path;
+  }
+  function getCookie(name) {
+    var name = name + '=';
+    var cookieArr = document.cookie.split(';');
+    for (var i = 0; i < cookieArr.length; i++) {
+      var cookie = cookieArr[i].trim();
+      if (cookie.indexOf(name) == 0)
+        return cookie.substring(name.length, cookie.length);
+    }
+    return '';
+  }
+  // checkCookie
+  function checkCookie(name) {
+    var value = getCookie(name);
+    if (value != '') {
+      console.log('获取到了,值为:' + value);
+    } else {
+      console.log('没有获取到,可以进行设置');
+    }
+  }
+</script>
