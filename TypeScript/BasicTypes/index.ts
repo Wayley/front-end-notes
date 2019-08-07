@@ -1,3 +1,9 @@
+/*
+ *
+ *基础类型
+ *
+ */
+
 // Boolean
 let isOk: boolean = true;
 
@@ -119,8 +125,8 @@ function infiniteLoop(): never {
 //
 
 // Type assertions 类型断言
-// 方式一：<>
+// 方式一: <>
 let sentence: any = 'i am a cute boy';
 let len: number = (<string>sentence).length;
-// 方式二
+// 方式二: as
 let len_: number = (sentence as string).length;

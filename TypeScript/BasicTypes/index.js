@@ -1,3 +1,8 @@
+/*
+ *
+ *基础类型
+ *
+ */
 // Boolean
 var isOk = true;
 // Number
@@ -111,8 +116,8 @@ function infiniteLoop() {
 // Object
 //
 // Type assertions 类型断言
-// 方式一：<>
+// 方式一: <>
 var sentence = 'i am a cute boy';
 var len = sentence.length;
-// 方式二
+// 方式二: as
 var len_ = sentence.length;
