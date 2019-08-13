@@ -94,4 +94,4 @@ var Person = /** @class */ (function () {
 var xiaoming = new Person('xiaoming');
 var xiaoming_ = __assign({}, xiaoming);
 console.log(xiaoming, xiaoming.sayHello());
-console.log(xiaoming_, xiaoming_.sayHello());
+// console.log(xiaoming_, xiaoming_.sayHello());// Error
