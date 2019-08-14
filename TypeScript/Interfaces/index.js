@@ -33,7 +33,7 @@ var getSumFunc = function (num1, num2) {
 var sum = getSumFunc(22, 9);
 console.log(sum);
 var _arr = ['w', 'z'];
-var obj = {
+var obj_ = {
     name: 'wz',
     age: 13,
     '15': '15___',
@@ -41,4 +41,12 @@ var obj = {
         console.log('22222');
     }
 };
-console.log(obj);
+console.log(obj_);
+var Clock = /** @class */ (function () {
+    function Clock(hour, minute) {
+    }
+    Clock.prototype.setTime = function (date) {
+        this.curTime = date;
+    };
+    return Clock;
+}());

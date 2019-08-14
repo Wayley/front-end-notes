@@ -4,7 +4,7 @@
  * @Company: uooc
  * @Date: 2019-08-08 16:11:31
  * @LastEditors: wzheng(hb_wangzheng@163.com)
- * @LastEditTime: 2019-08-09 16:44:59
+ * @LastEditTime: 2019-08-14 17:50:54
  * @Description:
  */
 /*
@@ -88,7 +88,7 @@ let _arr: StringArray = ['w', 'z'];
 interface Test {
   [index: string]: any;
 }
-let obj: Test = {
+let obj_: Test = {
   name: 'wz',
   age: 13,
   '15': '15___',
@@ -96,7 +96,7 @@ let obj: Test = {
     console.log('22222');
   }
 };
-console.log(obj);
+console.log(obj_);
 
 /************************************************************************************************/
 /*
