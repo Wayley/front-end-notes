@@ -25,5 +25,5 @@ fs.readFile(path.join(__dirname, './README.md'), 'utf8', (err, data) => {
     console.log('异步读取文件成功', data);
   }
 });
-
+fs.copyFile('./README.md', function () {})
 console.log(process.cwd());
