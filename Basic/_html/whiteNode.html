@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="test">
+    <p>第1</p>
+    <p>第2</p>
+    <p>第3</p>
+  </div>
+</body>
+<script>
+  function removeWhitespace(element) {
+    var cur = element.firstChild;
+    var tmp;
+    var reg = /\S/;
+    while (cur !== null) {
+      tmp = cur.nextSibling;
+      if (cur.nodeType === 3 && !reg.test(cur.nodeValue)) {
+        element.removeChild(cur);
+      } else if (cur.nodeType === 1) {
+        removeWhitespace(cur);
+      }
+      cur = tmp;
+    }
+    return element;
+  }
+  var pNode = document.querySelector('#test')
+  var len = pNode.childNodes.length
+  console.log('len: ', len) // 新浏览器及IE8以上为：7
+
+  var newNode = removeWhitespace(pNode)
+  var len_ = newNode.childNodes.length;
+  console.log('new lenght：', len_) // 为 3
+</script>
+
+</html>
