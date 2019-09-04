@@ -4,7 +4,7 @@
  * @Company: Fih-ACKN
  * @Date: 2019-09-04 15:11:42
  * @LastEditors: wzheng(hb_wangzheng@163.com)
- * @LastEditTime: 2019-09-04 16:46:01
+ * @LastEditTime: 2019-09-04 16:51:24
  * @Description:
  -->
 
@@ -35,9 +35,9 @@ $ cd Markdowm/
 9. [代码](#code)
 10. [流程图](#flow)
 
+<a name="title">
 
 ## 标题
-<a name="title">
 
 ```md
 # 一级标题
@@ -48,8 +48,9 @@ $ cd Markdowm/
 ###### 六级标题
 ```
 
-## 字体
 <a name="font">
+
+## 字体
 
 ```md
 *倾斜字体*
@@ -58,28 +59,34 @@ $ cd Markdowm/
 ~~删除线~~
 ```
 
-## 图片
 <a name="img">
+
+## 图片
 
 ```md
 ![图片alt](https://avatars0.githubusercontent.com/u/23481263?s=460&v=4 图片title)
 ```
 ![我的github头像](https://avatars0.githubusercontent.com/u/23481263?s=460&v=4 'wz的图片')
 
-## 超链接
 <a name="hyperlink">
+
+## 超链接
 
 ```md
 [超链接名](超链接地址)
 ```
 > e.g
 - [Github Site](https://github.com)
-- [锚点](#anchor)
 
 <a name="anchor">
 
-## 列表
+- [锚点](#anchor)
+
+
+
 <a name="list">
+
+## 列表
 
 - 有序列表
 
@@ -118,10 +125,10 @@ $ cd Markdowm/
    3. 列表2-3
 3. 列表3
 
+<a name="separator">
 
 ## 分割线
 
-<a name="separator">
 > 三个或三个以上的 - 或 *
 
 ```md
@@ -132,9 +139,9 @@ $ cd Markdowm/
 ```
 
 
-## 引用
-
 <a name="reference">
+
+## 引用
 
 > 一个 >
 >> 两个 >>
@@ -148,20 +155,18 @@ $ cd Markdowm/
 .
 .
 ```
+<a name="table">
 
 ## 表格
-
-<a name="table">
 
 |表头(默认左对齐)|表头(左对齐)|表头(水平居中)|表头(右对其)|
 |---|:---|:---:|---:|
 |张xx|123|你好|再见|
 |李xx|456|Hello|Bye|
 
-## 代码
-
 <a name="code">
 
+## 代码
 > 单行代码
 
 `console.log(1243)`
@@ -172,13 +177,13 @@ $ cd Markdowm/
 # some code
 ```
 
-## 流程图
-
 <a name="flow">
+
+## 流程图
 
 ```flow
 st=>start: 开始
-op=>operation:  Your Operation
+op=>operation: Your Operation
 cond=>condition: Yes or No?
 e=>end
 st->op->cond
