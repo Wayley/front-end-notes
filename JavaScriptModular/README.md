@@ -4,7 +4,7 @@
  * @Company: Fih-ACKN
  * @Date: 2019-09-18 14:16:47
  * @LastEditors: wzheng(hb_wangzheng@163.com)
- * @LastEditTime: 2019-09-18 18:05:53
+ * @LastEditTime: 2019-09-19 17:40:24
  * @Description:
  -->
 
@@ -66,7 +66,7 @@ define(['foo', 'bar']);
 <!-- factory为 字符串 -->
 
 ```js
-define('hi i m {{ name }}, and i m {{age}} years old');
+define('hi i m {{ name }}, and i m {{ age }} years old');
 ```
 
 <!-- factory为 函数 -->
@@ -97,3 +97,16 @@ define(function(require, exports, module) {
 ```
 
 - 浏览器实现: Browserify
+
+```shell
+# 安装Browserify
+
+$ npm install browserify -g
+# or
+$ npm install browserify --save-dev
+```
+
+```shell
+# 打包文件并输出到指定目录文件
+$ browserify js/src/app.js -o js/dist/bundle.js
+```
