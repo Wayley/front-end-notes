@@ -4,7 +4,7 @@
  * @Company: Fih-ACKN
  * @Date: 2019-09-18 14:16:47
  * @LastEditors: wzheng(hb_wangzheng@163.com)
- * @LastEditTime: 2019-09-19 17:40:24
+ * @LastEditTime: 2019-09-19 18:05:29
  * @Description:
  -->
 
@@ -89,11 +89,19 @@ define(function(require, exports, module) {
 });
 ```
 
+> 加载方式
+
+```js
+var math = require('math');
+var add = require('math').add;
+```
+
 > 实现方式
 
 - 服务端实现: Node.js
 
 ```js
+// node.js
 ```
 
 - 浏览器实现: Browserify
@@ -109,4 +117,20 @@ $ npm install browserify --save-dev
 ```shell
 # 打包文件并输出到指定目录文件
 $ browserify js/src/app.js -o js/dist/bundle.js
+```
+
+<a name="amd">
+
+### AMD(Asynchronous Module Definition) 异步模块定义
+
+> AMD 规范实现代表：requireJS
+
+> 定义模块方式
+
+> 加载方式
+
+```js
+require([moduleName, callback]);
+// e.g
+require(['math,person', function(math, person) {}]);
 ```
