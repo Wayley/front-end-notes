@@ -18,7 +18,7 @@ $ cd Basic/_html
 
 1. [空白节点](#white_node)
 2. [浏览器禁用属性]](#browser_disable_property)
-3. [](#)
+3. [显示文字拼音](#text_alphabetic)
 4. [](#)
 5. [](#)
 6. [](#)
@@ -81,4 +81,16 @@ console.log('new lenght：', len_); // 为 3
 
 <p onselect="document.selection.empty();">禁止复制文本</p>
 <p>普通文字可以复制</p>
+```
+
+<a name="text_alphabetic">
+
+### 显示文字拼音
+
+```html
+  <!--拼音-->
+  <ruby>王正<rt>wangzheng</rt></ruby>
+  <br></br>
+  <ruby>王<rt>wang</rt></ruby>
+  <ruby>正<rt>zheng</rt></ruby>
 ```
