@@ -1,4 +1,4 @@
-This is the notes collection for [Angular]()
+This is the notes collection for [AngularJS & Angular]()
 
 ## How to use it
 
@@ -13,3 +13,8 @@ Then get into the [Angular folder](https://github.com/Wayley/front-end-notes/tre
 ```bash
 $ cd Angular/
 ```
+
+## Table of Contents
+
+1. [angularJS](https://github.com/Wayley/front-end-notes/tree/master/Angular/angularJS)
+2. [angular](https://github.com/Wayley/front-end-notes/tree/master/Angular/angular)
