@@ -5,7 +5,7 @@
 1. [KISSY CSS Reset](#css_reset)
 2. [清除浮动](#clearfix)
 3. [css 一(x)行显示(文本溢出添加...)](#text_overflow)
-4. [css 一些特效实现](#special_effects)
+4. [css 一些特效实现](effects/README.md)
 5. [css 的兼容写法](#compatibility)
 6. [less 语法](#less_grammar)
 7. [](#)
@@ -153,7 +153,7 @@ table {
 
 ```css
 .clearfix:after {
-  content: '.';
+  content: ".";
   display: block;
   height: 0;
   clear: both;
@@ -167,7 +167,7 @@ table {
 ```css
 .demo:after,
 .demo2:after {
-  content: '.';
+  content: ".";
   display: block;
   height: 0;
   clear: both;
@@ -195,7 +195,7 @@ table {
 
 ```css
 .clearfix:after {
-  content: '.';
+  content: ".";
   /*内容为“.”就是一个英文的句号而已。也可以不写。*/
   display: block;
   /*加入的这个元素转换为块级元素。*/
@@ -236,114 +236,6 @@ table {
 }
 ```
 
-<a name="special_effects">
-
-### css 一些特效实现
-
-- ♥ 心形样式
-
-  ```css
-  .heart {
-    width: 10px;
-    height: 10px;
-    position: fixed;
-    background: #f00;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-  }
-
-  .heart:after,
-  .heart:before {
-    content: '';
-    width: inherit;
-    height: inherit;
-    background: inherit;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    position: fixed;
-  }
-
-  .heart:after {
-    top: -5px;
-  }
-
-  .heart:before {
-    left: -5px;
-  }
-  ```
-
-- 纯 css 控制页面滚动进度条
-
-  ```css
-  body {
-    background-image: linear-gradient(to right top, #ffcc00 50%, #eee 50%);
-    background-repeat: no-repeat;
-    background-size: 100% calc(100% - 100vh + 3px); /* 3px为滚动条高度 */
-  }
-  body::after {
-    content: '';
-    position: fixed;
-    top: 3px; /* 滚动条高度 */
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    z-index: -1;
-  }
-  ```
-
-- 宽度百分比时 高和宽一样大小
-
-  ```html
-  <div class="container clearfix">
-    <div class="left-part">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem odit
-      accusantium omnis ullam, repellat similique nostrum necessitatibus
-      voluptatem iure autem facilis doloremque laborum, magnam dignissimos
-      veniam mollitia eligendi deserunt quam!
-    </div>
-    <div class="right-part"><div class="icon"></div></div>
-  </div>
-  ```
-
-  ```css
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  .clearfix {
-    overflow: hidden;
-    _zoom: 1;
-  }
-  .container {
-    font-size: 24px;
-    color: #fff;
-  }
-  .left-part {
-    float: left;
-    width: 60%;
-    background: #ccc;
-  }
-  .right-part {
-    float: right;
-    width: 40%;
-  }
-  .icon {
-    width: 100%;
-    background: #ccc;
-    border-radius: 100%;
-  }
-  .icon::before {
-    content: '';
-    padding-top: 100%;
-    display: block;
-  }
-  ```
-
-- TODO:
-
 <a name="compatibility">
 
 ### css 的兼容写法
@@ -367,7 +259,7 @@ table {
 
 ```js
 // opacity的JS兼容处理
-object.filter = 'alpha(opacity=' + opacity + ')'; /* IE */
+object.filter = "alpha(opacity=" + opacity + ")"; /* IE */
 object.MozOpacity = opacity / 100; /* 老版Mozilla */
 object.KhtmlOpacity = opacity / 100; /* 老版Safari */
 object.opacity = opacity / 100; /* 支持opacity的浏览器*/
@@ -378,9 +270,9 @@ object.opacity = opacity / 100; /* 支持opacity的浏览器*/
 ### less 语法
 
 ```less
-@import 'base.css'; //引入其他css
-@import 'base.less'; //引入less  会被编译
-@import (reference) 'public.less'; //引入less  则不会被编译
+@import "base.css"; //引入其他css
+@import "base.less"; //引入less  会被编译
+@import (reference) "public.less"; //引入less  则不会被编译
 //  reference:不编译
 //  inline：在输出中包含源文件但不加工它
 //  less：将文件作为Less文件对象，无论是什么文件扩展名
@@ -399,20 +291,20 @@ a {
     background: @mainColor; //会取较近的变量
   }
 }
-@ImgPath: '../images';
+@ImgPath: "../images";
 .logo {
   color: @mainColor;
-  background: url('@{ImgPath}/backendMS.png') no-repeat center; //使用@{}
+  background: url("@{ImgPath}/backendMS.png") no-repeat center; //使用@{}
   img {
     width: 300px;
   }
 }
 @selector: mybox, .mybox2; //可以写类也可以写标签
-@content: '.';
+@content: ".";
 .@{selector} {
   width: 100px;
   height: 100px;
-  background: url('@{ImgPath}/backendMS.png');
+  background: url("@{ImgPath}/backendMS.png");
   &:hover {
     content: @content;
   }
