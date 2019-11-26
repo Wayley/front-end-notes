@@ -8,7 +8,7 @@
 4. [css 一些特效实现](effects/README.md)
 5. [css 的兼容写法](#compatibility)
 6. [less 语法](#less_grammar)
-7. [](#)
+7. [css 中:root 和 var 的使用](#root_var_in_css)
 8. [](#)
 9. [](#)
 10. [](#)
@@ -433,5 +433,19 @@ a {
     // 会反转成  ===> .header .user{}
     color: gray;
   }
+}
+```
+
+<a name="root_var_in_css">
+
+### css 中:root 和 var 的使用
+
+```css
+:root {
+  --h1-color: #c6cbef;
+}
+h1 {
+  color: var(--h1-color);
+  /* color: #c6cbef; */
 }
 ```
