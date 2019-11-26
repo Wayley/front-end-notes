@@ -6,6 +6,12 @@
   overflow: hidden;
   _zoom: 1;
 }
+.flex {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #app {
   min-height: 100vh;
   width: 100vw;
@@ -80,10 +86,6 @@
 .box-rotate {
   width: 100%;
   height: 100%;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .box-rotate .box-rotate-item {
   height: 200px;
@@ -120,5 +122,89 @@
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* 可爱的眼睛👀 */
+
+.eye {
+  width: 100px;
+  height: 100px;
+  background: #fffdf9;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  clip-path: circle(50% at center);
+  position: relative;
+}
+.eye .iris {
+  width: 40%;
+  height: 40%;
+  background: #343434;
+  border-radius: 50%;
+  animation: movement 6s ease-in-out infinite;
+}
+.eye .eye-eyelid-upper,
+.eye .eye-eyelid-lower {
+  width: 100%;
+  height: 20px;
+  background: #c6cbef;
+  position: absolute;
+  animation: blink 6s ease-in-out infinite;
+  z-index: 1;
+}
+.eye .eye-eyelid-upper {
+  top: 0;
+}
+.eye .eye-eyelid-lower {
+  bottom: 0;
+}
+@keyframes movement {
+  0%,
+  10% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-80%);
+  }
+  30%,
+  80% {
+    transform: translateX(0);
+  }
+  90% {
+    transform: translateX(80%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes blink {
+  0%,
+  30% {
+    height: 20px;
+  }
+  32% {
+    height: 40px;
+  }
+  34% {
+    height: 20px;
+  }
+  36% {
+    height: 40px;
+  }
+  38%,
+  50% {
+    height: 20px;
+  }
+  60%,
+  70% {
+    height: 45px;
+  }
+  80%,
+  100% {
+    height: 20px;
   }
 }
