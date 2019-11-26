@@ -144,7 +144,7 @@
   height: 40%;
   background: #343434;
   border-radius: 50%;
-  animation: movement 6s ease-in-out infinite;
+  animation: move 6s ease-in-out infinite;
 }
 .eye .eye-eyelid-upper,
 .eye .eye-eyelid-lower {
@@ -161,7 +161,7 @@
 .eye .eye-eyelid-lower {
   bottom: 0;
 }
-@keyframes movement {
+@keyframes move {
   0%,
   10% {
     transform: translateX(0);
@@ -180,7 +180,6 @@
     transform: translateX(0);
   }
 }
-
 @keyframes blink {
   0%,
   30% {
