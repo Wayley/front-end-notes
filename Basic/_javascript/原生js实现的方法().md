@@ -1,3 +1,21 @@
+# Native JavaScript
+
+## Table of Contents
+
+1. [原生实现 extend 方法](#extend)
+2. [原生 js 操作 DOM](#dom)
+   1. [hasClass](#dom_hasClass)
+   2. [addClass](#dom_addClass)
+   3. [removeClass](#dom_removeClass)
+   4. [toggleClass](#dom_toggleClass)
+3. [其他](#other)
+
+## Contents
+
+<a name="extend">
+
+### 原生实现 extend 方法
+
 ```js
 var extend = (function() {
   for (var p in { toString: null }) {
@@ -41,7 +59,7 @@ var extend = (function() {
   };
 })();
 
-<!--测试extend方法-->
+// 测试extend方法
 function testExtend() {
   var obj1 = {
     name: 'wz1',
@@ -62,4 +80,59 @@ function testExtend() {
   res.say(); // wz2
 }
 testExtend();
+```
+
+<a name="dom">
+
+### 原生 js 操作 DOM
+
+<a name="dom_hasClass">
+
+#### hasClass
+
+> 判断 DOM 元素是否存在某个类名
+
+```js
+function hasClass(ele, className) {
+  return ele.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
+}
+```
+
+#### addClass
+
+> 为 DOM 元素添加类名
+
+```js
+function addClass(ele, className) {
+  if (!hasClass(ele, className)) {
+    ele.className += ' ' + className;
+  }
+}
+```
+
+#### removeClass
+
+> 为 DOM 元素移除某类名
+
+```js
+function removeClass(ele, className) {
+  if (hasClass(ele, className)) {
+    var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
+    ele.className = ele.className.replace(reg, ' ');
+  }
+}
+```
+
+#### dom_toggleClass
+
+> 切换 DOM 元素的某个类名
+
+```js
+function toggleClass(ele, className) {
+  if (hasClass(ele, className)) {
+    removeClass(ele, className);
+  } else {
+    addClass(ele, className);
+  }
+}
 ```
