@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Usage of Console</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+  /* ************************ console对象 ************************ */
+  console.log(console) // assert ... warn等方法
+
+  /* ************************ console.log样式输出 ************************ */
+  // console.log('文字1%c文字2',style) %c后面的文字会拥有样式
+  console.log('%cHello World', 'color:#333;font-size:24px;')// Hello World
+  console.log('Hello %cWorld', 'color:#333;font-size:24px;')// Hello World
+
+  /* ************************ console.dir ************************ */
+  const schools = [{ id: 108, name: 'school_1' }, { id: 109, name: 'school_2' }]
+  const obj = { name: 'wz', age: 17, schools, }
+  console.log(obj)
+  console.dir(obj)
+
+  /* ************************ console.table ************************ */
+  console.table(schools)
+
+  /* ************************ console.group & console.groupEnd ************************ */
+  console.group()
+  console.log('A组')
+  console.groupEnd()
+
+  console.group()
+  console.log('B组')
+  console.log('B1')
+  console.log('B2')
+  console.groupEnd()
+
+  /* ************************ console.count ************************ */
+  console.count('label')
+  console.count('label')
+  console.count('label_1')
+  console.count('label')
+
+  /* ************************ console.assert ************************ */
+  // console.assert(condition,message) condition为true不处理,为false时执行错误信息.
+  for (let i = 1; i <= 5; i++) {
+    console.assert(i % 2 === 0, `第${i}个是奇数`)
+  }
+
+  /* ************************ console.time && console.timeEnd ************************ */
+  console.time('JS的for循环100内整数求和时间')
+  let sum = 0
+  for (let i = 0; i < 100; i++) {
+    sum += i
+  }
+  console.log(`总和为：${sum}`)
+  console.timeEnd('JS的for循环100内整数求和时间')
+
+</script>
