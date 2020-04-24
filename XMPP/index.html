@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+  <script src='strophe.min.js'></script>
+  <script src='ofwebrtc.js'></script>
+
+</head>
+
+<body>
+  <p id="info"></p>
+  <p>----------------------------------------------------------------</p>
+
+  JID：<input type="text" id="input-jid" value="">
+  <br>
+  密码：<input type="password" id="input-pwd" value="">
+  <br>
+  <button id="btn-login">登录</button><br>
+
+  <br>
+  目标JID：
+  <input type="text" id="input-contacts" value="mytest1@pc-20170308pkrs">
+  <button id="btn-call">Call</button>
+  <p>----------------------------------------------------------------</p>
+
+  Local: <br>
+  <video id="localVideo" autoplay></video><br>
+  Remote: <br>
+  <video id="remoteVideo" autoplay></video>
+
+
+</body>
+
+</html>
