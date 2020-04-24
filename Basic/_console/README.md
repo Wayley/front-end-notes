@@ -1,4 +1,4 @@
-This is the notes collection for [The Usage of Console]()
+This is the notes collection for [The Usage of Console](#console)
 
 ## Table of Contents
 
