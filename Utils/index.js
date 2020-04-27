@@ -42,3 +42,13 @@ export function toNumber(val) {
   var n = parseFloat(val);
   return isNaN(n) ? val : n;
 }
+/* ************************************************** CUSTOM ************************************************** */
+/**
+ * @param {String} fileName    文件名称
+ * @return {[Boolean]}         [判断文件名称是否合法]
+ */
+export function isAvalidFileName(fileName) {
+  let fname = fileName.replace(/(.*\/)*([^.]+).*/gi, '$2');
+  let regEx = /[\~\!\/\#\$\%\^\*\=\+\\\|\[\{\}\]\;\:\'\"\<\>\/\?]+/gi;
+  return !regEx.test(fname);
+}
