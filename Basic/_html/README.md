@@ -19,15 +19,15 @@ $ cd Basic/_html
 1. [空白节点](#white_node)
 2. [浏览器禁用属性]](#browser_disable_property)
 3. [显示文字拼音](#text_alphabetic)
-4. [](#)
-5. [](#)
+4. [DOM](#dom)
+5. [BOM](#bom)
 6. [](#)
 
 ## Contents
 
-<a name="white_node">
-
 ### 空白节点
+
+<a name="white_node">
 
 ```html
 <div id="test">
@@ -63,9 +63,9 @@ var len_ = newNode.childNodes.length;
 console.log('new lenght：', len_); // 为 3
 ```
 
-<a name="browser_disable_property">
-
 ### 浏览器禁用属性
+
+<a name="browser_disable_property">
 
 ```html
 <img
@@ -83,9 +83,9 @@ console.log('new lenght：', len_); // 为 3
 <p>普通文字可以复制</p>
 ```
 
-<a name="text_alphabetic">
-
 ### 显示文字拼音
+
+<a name="text_alphabetic">
 
 ```html
   <!--拼音-->
@@ -94,3 +94,15 @@ console.log('new lenght：', len_); // 为 3
   <ruby>王<rt>wang</rt></ruby>
   <ruby>正<rt>zheng</rt></ruby>
 ```
+
+### DOM
+
+<a name="dom">
+
+> window.document
+
+### BOM
+
+<a name="bom">
+
+> Including `navigator`、 `history` 、`screen`、`location` and `window`
